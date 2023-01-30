@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Add New User</h1>
+
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="title">Name :</label>
+            <input formControlName="name" id="name" type="text" class="form-control">
+
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+
+
+        </div>
+        <div class="form-group">
+            <label for="body">Job :</label>
+            <input formControlName="job" type="text" class="form-control">
+
+
+            <div *ngIf="f['job'].errors && f['job'].errors['required']">job is required.</div>
+
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+        <a href="#" routerLink="/users" class="btn btn-primary">Back</a>
+
+
+    </form>
+
+</div>
+<h4 *ngIf="isadded">user is added successfully</h4>
+

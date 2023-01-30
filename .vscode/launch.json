@@ -3,13 +3,55 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": "Launch via NPM",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "debug"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
+      "name": "Debug",
+      "type": "comet",
+      "request": "launch",
+      "preLaunchTask": "comet: Build"
+    },
+    {
+   
+   
       "name": "ng serve",
-      "type": "pwa-chrome",
+      "type": "chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/"
     },
     {
+
       "name": "ng test",
       "type": "chrome",
       "request": "launch",

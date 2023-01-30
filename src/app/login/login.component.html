@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" (ngSubmit)="sendformdata()" >
+  <!-- Email input -->
+  <div class="form-group">
+    <label class="form-label" for="form2Example1">Email address</label>
+    <input type="email" formControlName="email" id="form2Example1" class="form-control" />
+    <div  *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+    <span class="text-danger" *ngIf="f['email'].errors && f['email'].errors['required']">Email is required</span>
+    <span class="text-danger" *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address</span>
+  </div>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-group">
+    <label class="form-label" for="form2Example2">Password</label>
+    <input type="password" formControlName="password" name="password" id="form2Example2" class="form-control" />
+    <div  *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+    <span class="text-danger" *ngIf="f['password'].errors && f['password'].errors['required']">Password is required</span>
+    <span class="text-danger" *ngIf="f['password'].errors && f['password'].errors['minlength']">min length is 3 charachters</span>
+  </div>
+  </div>
+
+  <!-- Submit button -->
+  <button  class="btn btn-primary " type="submit" >Login</button>
+
+</form>

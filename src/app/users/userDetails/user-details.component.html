@@ -1,0 +1,38 @@
+
+
+<div class="card">
+   <div class="card-header">
+      <img   [src]=" userdetails?.avatar " alt="" [style.width.px]="imagewidth" [style.margin.px]="imagemargin">
+
+   </div>
+   <div class="card-body">
+
+     
+   <div class="table">
+      <thead>
+         <tr>
+         
+        <th class="col-md-4">UserId</th>
+        <th class="col-md-4">First Name</th>
+        <th class="col-md-4">Last Name</th>
+        <th class="col-md-4">Email</th>
+        
+          </tr>
+      </thead>
+      <tbody>
+         <tr>            
+            
+            <td>{{userdetails?.id}}</td>
+            <td>{{userdetails?.first_name}} </td>
+            <td>{{userdetails?.last_name}}</td>
+            <td>{{userdetails?.email}}</td>
+            
+           </tr>
+
+      </tbody>
+      
+   </div>
+</div>
+</div>
+<button class="btn btn-primary" (click)="Onback()"> Back to users list</button>
+

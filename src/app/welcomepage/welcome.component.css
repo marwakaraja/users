@@ -1,0 +1,11 @@
+
+p{
+    color: blue;
+}
+.card{
+   float: left;
+    width: 20rem;
+}
+p{
+    float: inline-start;
+}
